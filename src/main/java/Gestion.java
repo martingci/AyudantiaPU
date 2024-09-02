@@ -20,16 +20,15 @@ public class Gestion {
         if (Objects.equals(room, "VIP")){
             for (String[] strings : matrix) {
                 if (Objects.equals(strings[2], "VIP") && (Boolean.parseBoolean(strings[4]))) {
-                    people = people + (Integer.parseInt(strings[3]) + 1);
+                    people += (Integer.parseInt(strings[3]) + 1);
                 }
             }
             return (aforoVIP - people);
         } else if (Objects.equals(room, "General")){
-            for (String[] strings : matrix) {
+            for (String[] strings : matrix)
                 if (((Objects.equals(strings[2], room) && (Boolean.parseBoolean(strings[4]))))) {
                     people++;
                 }
-            }
             return (aforoGeneral - people);
         } else {
             return 0;
